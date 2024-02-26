@@ -1,0 +1,46 @@
+ form {
+    border: 1px solid gray;
+    width: 50%;
+    display: block;
+    margin: auto;
+    margin-top: 2rem;
+    border-radius: 5px;
+    display: flex;
+    padding: 2rem;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-inputs label {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.form-inputs input, textarea,
+select {
+    padding: 0.8rem;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+.form-inputs input, textarea,
+select:focus {
+  outline: none;
+}
+
+form button{
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: rgb(10, 10, 142);
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
