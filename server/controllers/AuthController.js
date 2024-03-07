@@ -1,6 +1,6 @@
 import UserModel from "../models/UserModel.js"
 import bcrypt from "bcrypt"
-
+import jwt from "jsonwebtoken"
 
 export const registerUser = async (req, res) => {
     const salt = await bcrypt.genSalt(10);
@@ -26,8 +26,12 @@ export const loginUser = async (req, res) => {
         const validity = await bcrypt.compare(user.password, req.body.password)
         if (validity) return res.status(404).json("Invalid Credentials")
 
+        const token = jwt.sign({
+            id: user._id, username: user.username
+        }, process.env.JWT, { expiresIn: "24h" })
+
         const { password, ...other } = user._doc
-        res.status(200).json({ ...other })
+        res.status(200).json({ ...other, token })
     } catch (error) {
         res.status(500).json(error.message)
     }

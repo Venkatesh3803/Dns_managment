@@ -1,34 +1,33 @@
 import mongoose from "mongoose";
 
-const UserSchema = new mongoose.Schema({
+const DnsSchema = new mongoose.Schema({
     username: {
         type: String,
         required: true,
-        unique: true,
     },
-    password: {
+    name: {
         type: String,
         required: true
     },
-    firstname: {
+    ip_version: {
+        type: String,
+        required: true
+    },
+    record_type: {
+        type: String,
+        required: true
+    },
+    time_to_live: {
         type: String,
     },
-    lastname: {
+    priority: {
         type: String,
+        default: "low"
     },
-    email: {
+    port: {
         type: String,
+        required: true
     },
-    country: {
-        type: String,
-    },
-    city: {
-        type: String,
-    },
-    postal: {
-        type: String,
-    },
-  
 }, { timestamps: true })
 
-export default mongoose.model("user", UserSchema)
+export default mongoose.model("DnsRecords", DnsSchema)

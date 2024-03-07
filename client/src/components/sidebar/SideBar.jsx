@@ -26,30 +26,31 @@ const SideBar = () => {
               <li>Home page</li>
             </ul>
           </Link>
-          <Link to={"/addtask"}>
+          <Link to={"/adddns"}>
             <ul>
               <BiTask />
-              <li>Add Tast</li>
+              <li>Add Dns Record</li>
             </ul>
           </Link>
-
-          {/* <ul>
-            <IoPersonOutline />
-            <li>Profile</li>
-          </ul> */}
+          <Link to={`/profile/${currentUser._id}`}>
+            <ul>
+              <IoPersonOutline />
+              <li>Profile</li>
+            </ul>
+          </Link>
         </div>
       </div>
       <div className="sidebar-bottom">
         <hr />
         <div className="sidebar-list">
-          {/* <ul>
+          <ul>
             <IoSettingsOutline />
             <li>Settings</li>
-          </ul> */}
+          </ul>
           {currentUser ?
-            <ul>
+            <ul onClick={handleLogout}>
               <CiLogout />
-              <li onClick={handleLogout}>LogOut</li>
+              <li >LogOut</li>
             </ul>
             :
             <Link to={"/login"}>

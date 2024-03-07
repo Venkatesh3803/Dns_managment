@@ -2,6 +2,7 @@ import axios from "axios";
 import { createContext, useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { BASE_URL } from "../requestMethods";
 
 export const AuthContext = createContext();
 
@@ -13,7 +14,7 @@ export const AuthContextProvider = ({ children }) => {
 
     const login = async (inputs) => {
         try {
-            const res = await axios.post("http://localhost:5000/api/auth/login", inputs,);
+            const res = await axios.post(`${BASE_URL}/auth/login`, inputs,);
             setCurrentUser(res.data)
             toast.success("Login Sucess")
             navigate("/")

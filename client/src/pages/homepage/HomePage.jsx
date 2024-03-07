@@ -2,6 +2,7 @@ import "./HomePage.css"
 import SideBar from '../../components/sidebar/SideBar'
 import Navber from '../../components/navber/Navber'
 import Hero from '../../components/hero/Hero'
+import Footer from "../../components/footer/Footer"
 
 const HomePage = () => {
   return (

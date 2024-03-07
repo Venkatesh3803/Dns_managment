@@ -4,6 +4,9 @@ import { Link } from "react-router-dom"
 import axios from "axios"
 import { toast } from "react-toastify"
 import { useNavigate } from "react-router-dom"
+import image from "../../assects/dns.png"
+import { BASE_URL } from "../../requestMethods"
+
 
 const Register = () => {
   const [username, setUsername] = useState("")
@@ -15,7 +18,7 @@ const Register = () => {
     e.preventDefault();
     if (password !== conformPass) return toast.warn("Password doesnot match")
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/register", {
+      const res = await axios.post(`${BASE_URL}/auth/register`, {
         username, password
       })
 
@@ -31,8 +34,11 @@ const Register = () => {
 
 
   return (
-    <div className='login'>
-      <div className="add-tast">
+    <div className='register'>
+      <div className="register-container">
+        <div className="">
+          <img src={image} alt="" />
+        </div>
         <form action="" onSubmit={handleSubmit}>
           <h2 style={{ fontWeight: "600", textAlign: "center" }}>Sign Up</h2>
           <div className="form-inputs">
@@ -45,11 +51,10 @@ const Register = () => {
           </div>
           <div className="form-inputs">
             <label htmlFor="">conform password</label>
-            <input type="password" placeholder="password"  onChange={(e) => setConformPass(e.target.value)} />
+            <input type="password" placeholder="password" onChange={(e) => setConformPass(e.target.value)} />
           </div>
           <p>Already have Account! <Link to={"/login"} style={{ color: "blue" }}>Login</Link></p>
           <button type="submit">Register</button>
-
         </form>
       </div>
     </div>

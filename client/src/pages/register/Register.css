@@ -1,0 +1,36 @@
+.register {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.register-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 5rem;
+    gap: 2rem;
+}
+
+.register-container div {
+    flex: 1;
+}
+
+
+.register-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.register-container form {
+    flex: 0.5;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    border: 1px solid gray;
+    gap: 1.5rem;
+}

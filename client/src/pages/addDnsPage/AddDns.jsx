@@ -1,9 +1,10 @@
 import React from 'react'
 import Navber from '../../components/navber/Navber'
 import SideBar from '../../components/sidebar/SideBar'
-import AddTaskForm from '../../components/addTaskForm/AddTaskForm'
+import AddDnsForm from '../../components/addDnsForm/AddDnsForm'
 
-const AddTask = () => {
+
+const AddDns = () => {
     return (
         <div className="home-page">
             <div className="home-left">
@@ -11,10 +12,10 @@ const AddTask = () => {
             </div>
             <div className="home-right">
                 <Navber />
-                <AddTaskForm />
+                <AddDnsForm />
             </div>
         </div>
     )
 }
 
-export default AddTask
+export default AddDns

@@ -1,8 +1,6 @@
 .home-page {
     width: 100%;
-    height: 100vh;
     display: flex;
-    overflow: hidden;
 }
 
 .home-left {
@@ -12,6 +10,9 @@
 
 .home-right {
     flex: 8.5;
-    padding: 1rem ;
+    padding: 1rem;
     background-image: linear-gradient( 174.2deg,  rgba(255,244,228,1) 7.1%, rgba(240,246,238,1) 67.4% );
+    height: 100vh;
+    overflow: hidden;
+    overflow-y: scroll;
 }

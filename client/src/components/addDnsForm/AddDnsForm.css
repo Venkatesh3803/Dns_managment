@@ -1,20 +1,28 @@
- form {
-    border: 1px solid gray;
-    width: 50%;
+.dns-form {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 2rem auto;
+}
+
+
+form {
+    width: 100%;
     display: block;
     margin: auto;
     margin-top: 2rem;
     border-radius: 5px;
     display: flex;
-    padding: 2rem;
     flex-direction: column;
     gap: 1rem;
 }
+
 
 .form-inputs {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    width: 100%;
 }
 
 .form-inputs label {
@@ -22,18 +30,21 @@
     font-size: 18px;
 }
 
-.form-inputs input, textarea,
+.form-inputs input,
+textarea,
 select {
     padding: 0.8rem;
     border: 1px solid gray;
     border-radius: 5px;
 }
-.form-inputs input, textarea,
+
+.form-inputs input,
+textarea,
 select:focus {
-  outline: none;
+    outline: none;
 }
 
-form button{
+form button {
     padding: 1rem;
     border-radius: 5px;
     border: 1px solid gray;
@@ -44,3 +55,9 @@ form button{
     cursor: pointer;
 }
 
+.rows {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}

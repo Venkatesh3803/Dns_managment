@@ -1,10 +1,8 @@
 import { useContext, useState } from "react"
 import "./Login.css"
 import { Link } from "react-router-dom"
-import { toast } from "react-toastify"
-import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../contextApi/AuthContext"
-
+import image from "../../assects/dns.png"
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -24,7 +22,10 @@ const Login = () => {
 
   return (
     <div className='login'>
-      <div className="add-tast">
+      <div className="login-container">
+        <div className="">
+          <img src={image} alt="" />
+        </div>
         <form action="" onSubmit={handleSubmit}>
           <h2 style={{ fontWeight: "600", textAlign: "center" }}>Login</h2>
           <div className="form-inputs">

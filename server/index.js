@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 import mongoose from "mongoose";
 import AuthRoute from "./routes/AuthRoute.js"
 import UserRoute from "./routes/UserRoute.js"
-import TaskRoute from "./routes/TaskRoute.js"
+import DnsRoute from "./routes/DnsRoute.js"
 import cors from "cors"
 
 const app = express();
@@ -37,4 +37,4 @@ app.listen(port, () => {
 //  routes
 app.use("/api/auth", AuthRoute)
 app.use("/api/user", UserRoute)
-app.use("/api/task", TaskRoute)
+app.use("/api/dns", DnsRoute)

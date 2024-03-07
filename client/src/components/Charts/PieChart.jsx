@@ -1,5 +1,5 @@
 import React from 'react';
-import { PieChart, Pie, Sector, Cell, ResponsiveContainer, Tooltip } from 'recharts';
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip } from 'recharts';
 
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
@@ -17,35 +17,38 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
     );
 };
 
-const PieCharts = ({ all }) => {
+const PieCharts = ({ dns }) => {
     const data = [
-        { name: 'Pending', value: all.filter((item) => item.status === "pending").length },
-        { name: 'Completed', value: all.filter((item) => item.status === "completed").length },
-        { name: 'InProgress', value: all.filter((item) => item.status === "progress").length },
-        { name: 'Started', value: all.filter((item) => item.status === "started").length },
+        { name: 'High', value: dns.filter((item) => item.priority === "High").length },
+        { name: 'Medium', value: dns.filter((item) => item.priority === "Medium").length },
+        { name: 'Low', value: dns.filter((item) => item.priority === "Low").length },
     ];
     return (
-        <ResponsiveContainer width="100%" height="100%">
-            <PieChart width={400} height={400}>
-                <Pie
-                    data={data}
-                    cx="50%"
-                    cy="50%"
-                    labelLine={false}
-                    label={renderCustomizedLabel}
-                    outerRadius={80}
-                    fill="#8884d8"
-                    dataKey="value"
-                >
-                    {data.map((entry, index) => (
-                        <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-                    ))}
-                </Pie>
-                <Tooltip />
-            </PieChart>
-        </ResponsiveContainer>
+        <div className='charts-container'>
+                        <p style={{ fontWeight: "600", fontSize: "16px", padding: "0.5rem" }}>This PieChart represents priority </p>
+            <ResponsiveContainer width="100%" height="100%">
+                <PieChart width={400} height={400}>
+                    <Pie
+                        data={data}
+                        cx="50%"
+                        cy="50%"
+                        labelLine={false}
+                        label={renderCustomizedLabel}
+                        outerRadius={80}
+                        fill="#8884d8"
+                        dataKey="value"
+                    >
+                        {data.map((entry, index) => (
+                            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+                        ))}
+                    </Pie>
+                    <Tooltip />
+                </PieChart>
+            </ResponsiveContainer>
+        </div>
     );
 
 }
 
 export default PieCharts
+
